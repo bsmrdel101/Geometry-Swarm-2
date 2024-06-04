@@ -1,18 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviourPunCallbacks
 {
-    // Start is called before the first frame update
-    void Start()
+    [Header("Movement")]
+    [SerializeField] private float _moveSpeed = 10f;
+
+
+    private void Update()
     {
-        
+        HandleMovement();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void HandleMovement()
     {
-        
+        float x = Input.GetAxisRaw("Horizontal");
+        float y = Input.GetAxisRaw("Vertical"); 
+        Vector3 movement = new Vector3(x, y, 0) * Time.deltaTime;
+        transform.position += movement * _moveSpeed;
     }
 }
