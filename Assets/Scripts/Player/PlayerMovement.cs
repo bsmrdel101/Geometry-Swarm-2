@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using Photon.Pun;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviourPunCallbacks
+public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement")]
     [SerializeField] private float _moveSpeed = 10f;
