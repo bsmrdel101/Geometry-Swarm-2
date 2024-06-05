@@ -1,12 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviourPunCallbacks
 {
     [Header("Movement")]
     [SerializeField] private float _moveSpeed = 10f;
 
+
+    private void Start()
+    {
+        if (!photonView.IsMine) enabled = false;
+    }
 
     private void Update()
     {

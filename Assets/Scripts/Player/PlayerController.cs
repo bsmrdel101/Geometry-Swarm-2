@@ -11,6 +11,10 @@ public class PlayerController : MonoBehaviourPunCallbacks
 
     private void Start()
     {
-        if (!photonView.IsMine) _cam.SetActive(false);
+        if (!photonView.IsMine)
+        {
+            _cam.SetActive(false);
+            enabled = false;
+        }
     }
 }

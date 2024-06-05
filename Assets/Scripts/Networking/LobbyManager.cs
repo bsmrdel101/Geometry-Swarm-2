@@ -66,9 +66,10 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         ClearPlayerList();
         foreach (Player player in PhotonNetwork.PlayerList)
         {
-            GameObject _playerElementObj = Instantiate(_playerElement, Vector3.zero, Quaternion.identity);
-            _playerElementObj.transform.SetParent(_playerList);
-            _playerElementObj.GetComponent<PlayerElement>().SetName(player.NickName);
+            GameObject playerElementObj = Instantiate(_playerElement, Vector3.zero, Quaternion.identity);
+            playerElementObj.transform.SetParent(_playerList);
+            playerElementObj.transform.localScale = new Vector3(1, 1, 1);
+            playerElementObj.GetComponent<PlayerElement>().SetName(player.NickName);
         }
 
         if (PhotonNetwork.LocalPlayer.IsMasterClient)
