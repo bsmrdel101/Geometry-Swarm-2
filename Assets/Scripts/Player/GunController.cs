@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Photon.Pun;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GunController : MonoBehaviourPunCallbacks
 {
@@ -9,13 +10,18 @@ public class GunController : MonoBehaviourPunCallbacks
     public Gun SelectedWeapon;
     private bool _canFire = true;
     private float _offset = 0.8f;
-    private Rect _screenRect = new Rect(0,0, Screen.width, Screen.height);
+    private Rect _screenRect = new Rect(0, 0, Screen.width, Screen.height);
 
     [Header("SFX")]
     [SerializeField] private AudioSource _audioSource;
     [SerializeField] private AudioClip _zapSfx;
 
+    [Header("Cursors")]
+    [SerializeField] private Sprite _defaultCrosshair;
+    [SerializeField] private Sprite _reloadCrosshair;
+
     [Header("References")]
+    [SerializeField] private Image _cursorObj;
     [SerializeField] private Transform _pivotPoint;
     [SerializeField] private GameObject _bulletPrefab;
     [SerializeField] private Transform _gunBarrel;
@@ -30,6 +36,7 @@ public class GunController : MonoBehaviourPunCallbacks
 
     private void Update()
     {
+        if (!_screenRect.Contains(Input.mousePosition)) return;
         HandleGunRotation();
         HandleShootGun();
     }
