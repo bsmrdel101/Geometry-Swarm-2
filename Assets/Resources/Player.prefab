@@ -257,7 +257,6 @@ MonoBehaviour:
   _zapSfx: {fileID: 8300000, guid: 19b0715f840ca0d49b8c1d1acf400ab9, type: 3}
   _defaultCrosshair: {fileID: 21300000, guid: 8e8fc2f0208bf8f4cab58fb3897a752e, type: 3}
   _reloadCrosshair: {fileID: 21300000, guid: c20196fd0bf47c149a0104cae70497d2, type: 3}
-  _cursorObj: {fileID: 0}
   _pivotPoint: {fileID: 1491233015294506486}
   _bulletPrefab: {fileID: 2810041264967649617, guid: 4da127dd00db33a4b9e92823f640cbf1, type: 3}
   _gunBarrel: {fileID: 4526628270171495363}
@@ -382,14 +381,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2223403076041330929}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0.071, y: 0.79, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.783, y: -0.067, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4526628270171495363}
   m_Father: {fileID: 1491233015294506486}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3303272071074115480
 SpriteRenderer:
   m_ObjectHideFlags: 0

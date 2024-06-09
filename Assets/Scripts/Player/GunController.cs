@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using Photon.Pun;
 using UnityEngine;
 using UnityEngine.UI;
@@ -21,7 +22,7 @@ public class GunController : MonoBehaviourPunCallbacks
     [SerializeField] private Sprite _reloadCrosshair;
 
     [Header("References")]
-    [SerializeField] private Image _cursorObj;
+    private Image _cursorObj;
     [SerializeField] private Transform _pivotPoint;
     [SerializeField] private GameObject _bulletPrefab;
     [SerializeField] private Transform _gunBarrel;
@@ -43,10 +44,10 @@ public class GunController : MonoBehaviourPunCallbacks
 
     private void HandleGunRotation()
     {
-        Vector3 difference = _playerCam.ScreenToWorldPoint(Input.mousePosition) - _pivotPoint.transform.position;
-        difference.Normalize();
-        float rotation_z = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-        _pivotPoint.transform.rotation = Quaternion.Euler(0f, 0f, rotation_z + _offset);
+        Vector3 dir = _playerCam.ScreenToWorldPoint(Input.mousePosition) - _pivotPoint.position;
+        dir.Normalize();
+        float rotationZ = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        _pivotPoint.transform.rotation = Quaternion.Euler(0f, 0f, rotationZ + _offset);
     }
 
     private void HandleShootGun()
