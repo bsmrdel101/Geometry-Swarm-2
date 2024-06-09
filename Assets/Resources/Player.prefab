@@ -258,6 +258,7 @@ MonoBehaviour:
   _defaultCrosshair: {fileID: 21300000, guid: 8e8fc2f0208bf8f4cab58fb3897a752e, type: 3}
   _reloadCrosshair: {fileID: 21300000, guid: c20196fd0bf47c149a0104cae70497d2, type: 3}
   _pivotPoint: {fileID: 1491233015294506486}
+  _gunPos: {fileID: 2716066851445992763}
   _bulletPrefab: {fileID: 2810041264967649617, guid: 4da127dd00db33a4b9e92823f640cbf1, type: 3}
   _gunBarrel: {fileID: 4526628270171495363}
 --- !u!82 &2162792681677185971
@@ -382,7 +383,7 @@ Transform:
   m_GameObject: {fileID: 2223403076041330929}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.783, y: -0.067, z: 0}
+  m_LocalPosition: {x: 0, y: -0.067, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

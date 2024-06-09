@@ -8,9 +8,9 @@ using UnityEngine.UI;
 public class GunController : MonoBehaviourPunCallbacks
 {
     [Header("Weapon")]
-    public Gun SelectedWeapon;
     private bool _canFire = true;
     private float _offset = 0.8f;
+    public Gun SelectedWeapon;
     private Rect _screenRect = new Rect(0, 0, Screen.width, Screen.height);
 
     [Header("SFX")]
@@ -22,10 +22,11 @@ public class GunController : MonoBehaviourPunCallbacks
     [SerializeField] private Sprite _reloadCrosshair;
 
     [Header("References")]
-    private Image _cursorObj;
     [SerializeField] private Transform _pivotPoint;
+    [SerializeField] private Transform _gunPos;
     [SerializeField] private GameObject _bulletPrefab;
     [SerializeField] private Transform _gunBarrel;
+    private Image _cursorObj;
     private Camera _playerCam;
 
 
@@ -33,6 +34,7 @@ public class GunController : MonoBehaviourPunCallbacks
     {
         if (!photonView.IsMine) enabled = false;
         _playerCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        SetGunOffset();
     }
 
     private void Update()
@@ -47,7 +49,12 @@ public class GunController : MonoBehaviourPunCallbacks
         Vector3 dir = _playerCam.ScreenToWorldPoint(Input.mousePosition) - _pivotPoint.position;
         dir.Normalize();
         float rotationZ = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        _pivotPoint.transform.rotation = Quaternion.Euler(0f, 0f, rotationZ + _offset);
+        _pivotPoint.transform.rotation = Quaternion.Euler(0f, 0f, rotationZ);
+    }
+
+    private void SetGunOffset()
+    {
+        _gunPos.position = new Vector2(_offset, _gunPos.position.y);
     }
 
     private void HandleShootGun()
