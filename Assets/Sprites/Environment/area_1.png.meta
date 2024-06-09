@@ -136,11 +136,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: planks_1
+      name: area_1_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 1
+        y: 1
         width: 32
         height: 32
       alignment: 0
@@ -150,8 +150,155 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a003eda6ead0f79498d0446837c54704
-      internalID: 883024834
+      spriteID: 6bfe9ed19c9f31c4c9af6f159b332ef2
+      internalID: -1771836270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: area_1_1
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd87eeadc63a6134fb7c31be134171df
+      internalID: 1291470969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: area_1_2
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c80c881a6d1cad499b12261423e460c
+      internalID: -1733539955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: area_1_3
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d55fe44c54f4a4243b559cda2fdd01de
+      internalID: 1151913857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: area_1_4
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2509040a688686f46894c723071b3d65
+      internalID: -1113684862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: area_1_5
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 333d9e763da4c104683009c348183971
+      internalID: -1659954866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: area_1_6
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7f2bda4bfd18cf44bf71c842762ce34
+      internalID: 1704545409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: area_1_7
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 1
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0512f5b471265434dac5cdbab4f7f8b4
+      internalID: 103319733
       vertices: []
       indices: 
       edges: []
@@ -167,7 +314,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      planks_1: 883024834
+      area_1_0: -1771836270
+      area_1_1: 1291470969
+      area_1_2: -1733539955
+      area_1_3: 1151913857
+      area_1_4: -1113684862
+      area_1_5: -1659954866
+      area_1_6: 1704545409
+      area_1_7: 103319733
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

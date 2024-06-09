@@ -6,7 +6,10 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviourPunCallbacks
 {
     [Header("Movement")]
-    [SerializeField] private float _moveSpeed = 10f;
+    [SerializeField] private float _moveSpeed = 6f;
+
+    [Header("References")]
+    [SerializeField] private Rigidbody2D _rb;
 
 
     private void Start()
@@ -14,7 +17,7 @@ public class PlayerMovement : MonoBehaviourPunCallbacks
         if (!photonView.IsMine) enabled = false;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         HandleMovement();
     }
@@ -24,6 +27,6 @@ public class PlayerMovement : MonoBehaviourPunCallbacks
         float x = Input.GetAxisRaw("Horizontal");
         float y = Input.GetAxisRaw("Vertical"); 
         Vector3 movement = new Vector3(x, y, 0) * Time.deltaTime;
-        transform.position += movement * _moveSpeed;
+        _rb.MovePosition(transform.position + movement * _moveSpeed);
     }
 }

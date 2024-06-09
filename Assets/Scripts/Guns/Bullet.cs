@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [Header("Properties")]
-    public Vector2 Velocity;
+    [HideInInspector] public Vector2 Velocity;
 
 
     private void Update()

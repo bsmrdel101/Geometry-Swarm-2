@@ -154,7 +154,7 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
@@ -226,7 +226,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb27719b5f0add84a8b84092f6abf7a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 6.3
+  _moveSpeed: 6
+  _rb: {fileID: 4624174016105887509}
 --- !u!114 &2293812857587857561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,7 +255,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SelectedWeapon: {fileID: 11400000, guid: 777d722181c46a849a5e6a6b9d820fbb, type: 2}
   _audioSource: {fileID: 2162792681677185971}
-  _zapSfx: {fileID: 8300000, guid: 19b0715f840ca0d49b8c1d1acf400ab9, type: 3}
   _defaultCrosshair: {fileID: 21300000, guid: 8e8fc2f0208bf8f4cab58fb3897a752e, type: 3}
   _reloadCrosshair: {fileID: 21300000, guid: c20196fd0bf47c149a0104cae70497d2, type: 3}
   _pivotPoint: {fileID: 1491233015294506486}

@@ -9,13 +9,11 @@ public class GunController : MonoBehaviourPunCallbacks
 {
     [Header("Weapon")]
     private bool _canFire = true;
-    private float _offset = 0.8f;
     public Gun SelectedWeapon;
     private Rect _screenRect = new Rect(0, 0, Screen.width, Screen.height);
 
     [Header("SFX")]
     [SerializeField] private AudioSource _audioSource;
-    [SerializeField] private AudioClip _zapSfx;
 
     [Header("Cursors")]
     [SerializeField] private Sprite _defaultCrosshair;
@@ -54,28 +52,31 @@ public class GunController : MonoBehaviourPunCallbacks
 
     private void SetGunOffset()
     {
-        _gunPos.position = new Vector2(_offset, _gunPos.position.y);
+        _gunPos.position = new Vector2(SelectedWeapon.Offset, _gunPos.position.y);
+    }
+
+    private void SpawnBullet()
+    {
+        Vector3 screenMousePos = Input.mousePosition;
+        Vector2 mousePos = _playerCam.ScreenToWorldPoint(screenMousePos);  
+        Vector2 dir = mousePos - (Vector2)transform.position;
+        dir.Normalize();
+        dir *= SelectedWeapon.BulletSpeed;
+        Bullet bullet = Instantiate(_bulletPrefab, _gunBarrel.position, Quaternion.identity).GetComponent<Bullet>();
+        bullet.Velocity = dir;
     }
 
     private void HandleShootGun()
     {
-        if (Input.GetMouseButton(0) && _canFire)
+        if ((SelectedWeapon.IsAuto && Input.GetMouseButton(0) || !SelectedWeapon.IsAuto && Input.GetMouseButtonDown(0)) && _canFire)
         {
             _canFire = false;
-            Vector3 screenMousePos = Input.mousePosition;
-            Vector2 mousePos = Camera.main.ScreenToWorldPoint(screenMousePos);  
-            Vector2 direction = mousePos - (Vector2)transform.position;
-            direction.Normalize();
-            direction *= SelectedWeapon.BulletSpeed;
-
-            Bullet bullet = Instantiate(_bulletPrefab, _gunBarrel.position, Quaternion.identity).GetComponent<Bullet>();
-            bullet.Velocity = direction;
-
-            _audioSource.PlayOneShot(_zapSfx);
+            SpawnBullet();
+            _audioSource.PlayOneShot(SelectedWeapon.ShotSfx);
             StartCoroutine(ReloadGun());
         }
     }
-
+    
     private IEnumerator ReloadGun()
     {
         yield return new WaitForSeconds(SelectedWeapon.FireDelay);

@@ -12,9 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf64099de26dac5408fb2f56fc1e04bc, type: 3}
   m_Name: Pistol
   m_EditorClassIdentifier: 
-  Sprite: {fileID: 519943945, guid: 7052b986495d1434cbbc07af37fdaf78, type: 3}
   Name: Pistol
+  Sprite: {fileID: 519943945, guid: 7052b986495d1434cbbc07af37fdaf78, type: 3}
+  ShotSfx: {fileID: 8300000, guid: 19b0715f840ca0d49b8c1d1acf400ab9, type: 3}
   BulletSpeed: 6
-  FireDelay: 0.4
+  ReloadTime: 2.5
   Damage: 1
+  MagSize: 6
   BulletSpread: 0
+  IsAuto: 0
+  FireDelay: 0.25
+  Offset: 0.8
