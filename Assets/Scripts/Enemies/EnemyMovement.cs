@@ -22,6 +22,7 @@ public class EnemyMovement : MonoBehaviour
         _agent.acceleration = _enemy.Acceleration;
 		_agent.updateRotation = false;
 		_agent.updateUpAxis = false;
+        _agent.stoppingDistance = _enemy.FollowDistance;
         StartCoroutine(UpdateTarget());
     }
 
@@ -37,17 +38,9 @@ public class EnemyMovement : MonoBehaviour
             yield return new WaitForSeconds(0.2f);
             FindClosetPlayer();
             if (!_target) continue;
+            // TODO: Raycast to see if a wall is in the way of shooting
 
-            if (_enemy.EnemyAI == EnemyAI.Ranged)
-            {
-                float distance = Vector3.Distance(_target.position, transform.position);
-                if (distance > 8)
-                    _agent.SetDestination(_target.position);
-                else if (distance < 6)
-                    _agent.SetDestination(Vector2.MoveTowards(transform.position, _target.position, -1));
-            } else {
-                _agent.SetDestination(_target.position);
-            }
+            _agent.SetDestination(_target.position);
         }
         _agent.SetDestination(transform.position);
         yield return new WaitForSeconds(0.2f);

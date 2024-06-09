@@ -26,6 +26,7 @@ public class Enemy : ScriptableObject
     public int MaxHp;
     public float MoveSpeed;
     public float Acceleration = 8f;
+    public float FollowDistance = 1f;
 
     [Header("Hitbox")]
     public HitboxType HitboxType;

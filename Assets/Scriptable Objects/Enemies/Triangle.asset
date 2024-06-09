@@ -15,10 +15,10 @@ MonoBehaviour:
   Name: Triangle
   Sprite: {fileID: -682082144, guid: f4bd530ea67c6ec40b36be9af2df7e4f, type: 3}
   EnemyAI: 0
-  Colision:
-  - {x: 0, y: 0.45}
-  - {x: 0.5, y: -0.4401926}
-  - {x: -0.5, y: -0.44019264}
   MaxHp: 3
   MoveSpeed: 18
   Acceleration: 26
+  FollowDistance: 1
+  HitboxType: 0
+  BoxCol: {x: 0.8648649, y: 0.8648649}
+  PolyColPoints: []
