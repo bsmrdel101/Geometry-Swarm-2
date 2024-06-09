@@ -9,12 +9,10 @@ public class EnemyController : MonoBehaviour
 
     [Header("References")]
     [SerializeField] private SpriteRenderer _spriteRenderer;
-    [SerializeField] private PolygonCollider2D _polyCol;
 
 
     private void Start()
     {
         _spriteRenderer.sprite = Enemy.Sprite;
-        _polyCol.points = Enemy.Colision;
     }
 }

@@ -19,6 +19,7 @@ public class EnemyMovement : MonoBehaviour
     {
         _enemy = _controller.Enemy;
         _agent.speed = _enemy.MoveSpeed;
+        _agent.acceleration = _enemy.Acceleration;
 		_agent.updateRotation = false;
 		_agent.updateUpAxis = false;
         StartCoroutine(UpdateTarget());

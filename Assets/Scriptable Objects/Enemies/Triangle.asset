@@ -20,4 +20,5 @@ MonoBehaviour:
   - {x: 0.5, y: -0.4401926}
   - {x: -0.5, y: -0.44019264}
   MaxHp: 3
-  MoveSpeed: 10
+  MoveSpeed: 18
+  Acceleration: 26

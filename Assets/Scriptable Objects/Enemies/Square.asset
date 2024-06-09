@@ -15,10 +15,9 @@ MonoBehaviour:
   Name: Square
   Sprite: {fileID: 979794364, guid: f4bd530ea67c6ec40b36be9af2df7e4f, type: 3}
   EnemyAI: 0
-  Colision:
-  - {x: -0.43243244, y: 0.43243244}
-  - {x: -0.43243244, y: -0.43243244}
-  - {x: 0.43243244, y: -0.43243244}
-  - {x: 0.43243244, y: 0.43243244}
   MaxHp: 10
   MoveSpeed: 6
+  Acceleration: 8
+  HitboxType: 0
+  BoxCol: {x: 0.8648649, y: 0.8648649}
+  PolyColPoints: []
